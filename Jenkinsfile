@@ -16,7 +16,7 @@ pipeline {
         
         stage('Build') {
             steps {
-                bat "mvn -Dmaven.test.failure.ignore=true -f api-gateway/ clean package"
+                sh "mvn -Dmaven.test.failure.ignore=true -f api-gateway/ clean package"
             }
                             
         }
