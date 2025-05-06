@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-         label 'windows'
-    }
+    agent any
     
     tools {
         // Install the Maven version configured as "M3" and add it to the path.
@@ -32,12 +30,6 @@ pipeline {
         stage('publish test result') {
             steps {
                 junit 'api-gateway/target/surefire-reports/*.xml'
-            }
-        }
-        
-        stage('test') {
-            steps {
-                bat "echo testing"
             }
         }
     }
